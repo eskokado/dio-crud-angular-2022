@@ -23,4 +23,16 @@ export class UserService {
   postUser(user: User):Observable<User> {
     return this.httpClient.post<User>(this.apiUrl, user, this.httpOptions);
   }
+
+  updateUser(id: string, user: User):Observable<User> {
+    return this.httpClient.put<User>(`${this.apiUrl}/id/${id}`, user, this.httpOptions);
+  }
+
+  deleteUser(id: number):Observable<User> {
+    return this.httpClient.delete<User>(`${this.apiUrl}/id/${id}`)
+  }
+
+  getUser(id: string):Observable<User[]> {
+    return this.httpClient.get<User[]>(`${this.apiUrl}/id/${id}`)
+  }
 }

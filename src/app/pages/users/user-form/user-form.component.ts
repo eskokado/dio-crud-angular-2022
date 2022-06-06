@@ -17,6 +17,7 @@ export class UserFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
+    private actRoute: ActivatedRoute,
     private router: Router
   ) {
     this.userForm = this.fb.group({
@@ -29,6 +30,23 @@ export class UserFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.actRoute.paramMap.subscribe(params => {
+      this.userId = params.get('id');
+      console.log(this.userId);
+      if(this.userId !== null) {
+        this.userService.getUser(this.userId).subscribe(result => {
+          this.userForm.patchValue({
+            id: result[0].id,
+            nome: result[0].nome,
+            sobrenome: result[0].sobrenome,
+            idade: result[0].idade,
+            profissao: result[0].profissao,
+          })
+        })
+      }
+    })
+
     this.getUsers();
   }
 
@@ -48,5 +66,23 @@ export class UserFormComponent implements OnInit {
     }, () => {
       this.router.navigate(['/']);
     })
+  }
+
+  updateUser() {
+    this.userService.updateUser(this.userId, this.userForm.value).subscribe(result => {
+      console.log('usuario atualizado', result);
+    }, (err) => {
+
+    }, () => {
+      this.router.navigate(['/']);
+    })
+  }
+
+  actionButton() {
+    if(this.userId !== null) {
+      this.updateUser()
+    }else {
+      this.createUser()
+    }
   }
 }
