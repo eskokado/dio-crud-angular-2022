@@ -19,4 +19,8 @@ export class UserService {
   getUsers():Observable<User[]> {
     return this.httpClient.get<User[]>(this.apiUrl);
   }
+
+  postUser(user: User):Observable<User> {
+    return this.httpClient.post<User>(this.apiUrl, user, this.httpOptions);
+  }
 }
