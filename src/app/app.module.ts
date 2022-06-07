@@ -10,6 +10,14 @@ import { UsersListComponent } from './pages/users/users-list/users-list.componen
 import { UserFormComponent } from './pages/users/user-form/user-form.component';
 import { DataBindingComponent } from './pages/data-binding/data-binding.component';
 import { TodoListComponent } from './pages/todo/todo-list/todo-list.component';
+import { TodoItemComponent } from './pages/todo/todo-item/todo-item.component';
+import { ButtonComponent } from './components/button/button.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -19,6 +27,8 @@ import { TodoListComponent } from './pages/todo/todo-list/todo-list.component';
     UserFormComponent,
     DataBindingComponent,
     TodoListComponent,
+    TodoItemComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +36,12 @@ import { TodoListComponent } from './pages/todo/todo-list/todo-list.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatInputModule,
+    MatCardModule,
+    MatGridListModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

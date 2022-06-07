@@ -11,3 +11,7 @@
 <input type="text" class="form-control" [(ngModel)]="textInput">
 <p class="text-default">{{ textInput }}</p>
 
+<app-button [btnText]="'cancelar'" [btnType]="'btn-danger'"></app-button>
+<app-button [btnText]="'Salvar'" [btnType]="'btn-success'"></app-button>
+<app-button btnText="Clique Aqui" btnType="btn-primary"></app-button>
+<app-button btnText="teste" btnType="btn-default" (clickChildren)="clicouNoFilho($event)"></app-button>
