@@ -18,6 +18,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { LifeCycleComponent } from './components/life-cycle/life-cycle.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {MatIconModule} from '@angular/material/icon';
     TodoListComponent,
     TodoItemComponent,
     ButtonComponent,
+    LifeCycleComponent,
   ],
   imports: [
     BrowserModule,
