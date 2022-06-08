@@ -19,6 +19,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { LifeCycleComponent } from './components/life-cycle/life-cycle.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { LifeCycleComponent } from './components/life-cycle/life-cycle.component
     MatGridListModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
